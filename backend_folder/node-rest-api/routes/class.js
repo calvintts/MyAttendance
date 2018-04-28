@@ -3,14 +3,15 @@ var router = express.Router();
 var Class = require('../lib/class');
 var mongoose = require('mongoose');
 var moment = require('moment');
+var db_url="mongodb://heroku_sp406f4tt:hackFresno2018@ds135252.mlab.com:35252/heroku_sp406f4t";
 
-//CONNECT TO DATABASE
-mongoose.connect("mongodb://heroku_sp406f4tt:hackFresno2018@ds135252.mlab.com:35252/heroku_sp406f4t");
-var db = mongoose.connection;
+
 
 //start the db for attendance
 router.post('/start',function(req,res)
 {
+  mongoose.connect(db_url);
+  var db = mongoose.connection;
   db.once("open",function() {
   	console.log("DB connected!");
   });
@@ -35,7 +36,7 @@ router.post('/start',function(req,res)
 
 
 router.get('/end',function(req,res){
-  db.close();
+  mongoose.disconnect();
   return res.json({"message":"Attendance stopped!"});
 });
 

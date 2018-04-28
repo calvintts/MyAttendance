@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../lib/User');
+var Instructor = require('../lib/Instructor');
 var md5= require('md5');
 var mongoose = require('mongoose');
 var ExpressBrute = require ('express-brute');
-var db_url="mongodb://heroku_sp406f4tt:hackFresno2018@ds135252.mlab.com:35252/heroku_sp406f4t";
+
 var store = new ExpressBrute.MemoryStore();
 var bruteforce = new ExpressBrute(store,{
 	freeRetries: 2,
@@ -13,10 +13,8 @@ var bruteforce = new ExpressBrute(store,{
 	failCallback: ExpressBrute.FailTooManyRequests
 });
 
+var db_url = "mongodb://heroku_sp406f4tt:hackFresno2018@ds135252.mlab.com:35252/heroku_sp406f4t";
 
-//CONNECT TO DATABASE
-mongoose.connect(db_url);
-var db = mongoose.connection;
 
 
 
@@ -29,6 +27,9 @@ router.get('/', function(req, res, next) {
 //POST REQUEST FOR SAVING USER TO DB
 router.post('/register',function(req,res)
 {
+  //CONNECT TO DATABASE
+  mongoose.connect(db_url);
+  var db = mongoose.connection;
   db.once("open",function() {
   	console.log("DB connected!");
   });
@@ -45,20 +46,20 @@ router.post('/register',function(req,res)
     var lastname = req.body.lastname;
     var id_number = req.body.id_number;
 
-    var newUser = new User();
-    newUser.email = email;
-    newUser.password = password;
-    newUser.firstname = firstname;
-    newUser.lastname = lastname;
-    newUser.id_number = id_number;
+    var newInstructor = new Instructor();
+    newInstructor.email = email;
+    newInstructor.password = password;
+    newInstructor.firstname = firstname;
+    newInstructor.lastname = lastname;
+    newInstructor.id_number = id_number;
 
-    User.findOne({email:email},function(err,user){
+    Instructor.findOne({email:email},function(err,instructor){
         if(err) {
             console.log(err);
             res.json(err);
         } else {
-            if(user==null) {
-                newUser.save(function(err,savedUser){
+            if(instructor==null) {
+                newInstructor.save(function(err,savedInstructor){
                     if(err){
                         console.log(err);
                         return res.json({"result":false, "message":"Failed creating an account"});
@@ -66,7 +67,7 @@ router.post('/register',function(req,res)
                     return res.json({"result":true, "message":"Account Registered!"});
                 });
             }else{
-                console.log(user);
+                console.log(instructor);
                 res.json({"result":false, "message":"Email already exists"});
             }
         }
@@ -76,7 +77,8 @@ router.post('/register',function(req,res)
 //POST REQUEST FOR FINDING USER
 router.post('/login',bruteforce.prevent,function(req,res,next)
 {
-	mongoose.connect(db_url);
+  //CONNECT TO DATABASE
+  mongoose.connect(db_url);
   var db = mongoose.connection;
   db.once("open",function() {
   	console.log("DB connected!");
@@ -86,26 +88,26 @@ router.post('/login',bruteforce.prevent,function(req,res,next)
   var email = req.body.email;
   var password = md5(req.body.password);
 
-  User.findOne({email: email, password: password},function(err,user){
+  Instructor.findOne({email: email, password: password},function(err,instructor){
     if(err) {
         next(err);
       //return res.json({"result":false, "message":"Login Failed"});
     } else {
-        //if user exists
-        console.log(user);
-        if(user) {
-						req.session.user = user;
+        //if instructor exists
+        console.log(instructor);
+        if(instructor) {
+						req.session.instructor = instructor;
             return res.json({
                 "result": true,
                 "message": "Login success",
                 "data": {
-                    "firstname": user['firstname'],
-                    "lastname": user['lastname'],
-                    "id_number": user['id_number']
+                    "firstname": instructor['firstname'],
+                    "lastname": instructor['lastname'],
+                    "id_number": instructor['id_number']
                 }
           });
         }
-        // if user doesn't exist
+        // if instructor doesn't exist
         res.json({
             "result": false,
             "message": "Login Failed"
@@ -113,35 +115,5 @@ router.post('/login',bruteforce.prevent,function(req,res,next)
     }
   })
 });
-
-router.get('/menu',function(req,res){
-	if(!req.session.user){
-		return res.json({
-			"result": false,
-			"message": "User not logged in"
-		});}
-		else{
-		return res.json({
-			"result":true,
-			"message": "Session Created",
-			"data": {
-					"firstname": req.session.user['firstname'],
-					"lastname": req.session.user['lastname'],
-					"id_number": req.session.user['id_number']
-			}
-		});
-	}
-});
-
-router.get('/logout',function(req,res)
-{
-	req.session.destroy();
-	return res.json({
-		"result":true,
-		"message":"User logged out"
-	});
-})
-
-
 
 module.exports = router;

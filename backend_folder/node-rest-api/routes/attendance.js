@@ -28,7 +28,11 @@ router.get('/:location/:classNumber',function(req,res)
       cords)<300){
           returnedClass.attendance.push({student_id: req.session.user['id_number']});
           res.json({"result":true,
-                    "message":"Attendaance Marked"});
+                    "message":"Attendance Marked"});
+      }
+      else {
+        res.json({"result":false,
+                  "message":"Attendance is not marked"});
       }
     }
   })

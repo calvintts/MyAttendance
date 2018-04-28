@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+  <form id="login-form1">
+    <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>
+    <ion-list id="login-list1">
+      <ion-item id="login-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="login-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="login-toggle1">
+        <ion-label>
+          Toggle
+        </ion-label>
+        <ion-toggle color="positive" checked="false"></ion-toggle>
+      </ion-item>
+    </ion-list>
+    <button id="login-button1" ion-button color="stable" block on-click="goToClasses()">
+      Log in
+    </button>
+  </form>
+</ion-content>

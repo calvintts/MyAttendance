@@ -1,14 +1,20 @@
 var mongoose = require('mongoose');
 
+const GeoJSON = new mongoose.Schema({
+  type:{
+    type:String,
+    default:"Point"},
+    coordinates:{
+      type:[Number],
+      index:"2dsphere"
+    }
+});
+
 var classSchema = new mongoose.Schema({
   className : String,
   classNumber : Number,
   classDay: Date,
-  location:
-  {
-    type: {String, default: 'Point'},
-    coordinates: {type: [Number], default: [0, 0]}
-  },
+  location: GeoJSON,
   attendance: [{
     student_id:Number,
   }]

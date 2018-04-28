@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ClassesPage } from '../classes/classes';
-import { LoginPage } from '../login/login';
+// import { LoginPage } from '../login/login';
 import { CalanderPage } from '../calander/calander';
 import { ClassSixPage } from '../class-six/class-six';
 import { CompletePage } from '../complete/complete';

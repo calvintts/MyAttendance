@@ -116,4 +116,13 @@ router.post('/login',bruteforce.prevent,function(req,res,next)
   })
 });
 
+router.get('/logout',function(req,res)
+{
+	req.session.destroy();
+	return res.json({
+		"result":true,
+		"message":"User logged out"
+	});
+})
+
 module.exports = router;

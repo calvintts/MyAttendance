@@ -20,6 +20,10 @@ router.post('/start',function(req,res)
   newClass.classNumber = req.body.classNumber;
   newClass.classDay = classDay;
   newClass.location = location;
+  if(!req.session.Instructor)
+  return res.json({"result":false,
+                    "message":"Instructor not logged in"
+                  });
   newClass.save(function(err,savedClass){
       if(err){
           console.log(err);

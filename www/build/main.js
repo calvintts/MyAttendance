@@ -93,9 +93,8 @@ var LoginPage = /** @class */ (function () {
     }
     LoginPage_1 = LoginPage;
     LoginPage.prototype.userLogin = function () {
-        console.log("user log" + this.userLoginInfo.email);
-        var param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password };
-        this.loginProvider.userLogin(param).then(function (result) {
+        console.log("submit button clicked");
+        this.loginProvider.userLogin(this.userLoginInfo).then(function (result) {
             console.log(result);
         }, function (err) {
             console.log(err);
@@ -183,12 +182,12 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = LoginPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <!--<form id="login-form1" (click)="userLogin()">-->\n\n    <form id="login-form1" (ngSubmit)="userLogin(userLoginInfo)">\n\n        <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n\n        <ion-list id="login-list1">\n\n          <ion-item id="login-input1">\n\n            <ion-label>\n\n              Email\n\n            </ion-label>\n\n            <ion-input type="email" [(ngModel)]="userLoginInfo.email" [ngModelOptions]="{standalone: true}" name="email" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-input2">\n\n            <ion-label>\n\n              Password\n\n            </ion-label>\n\n            <ion-input type="password" [(ngModel)]="userLoginInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-toggle1">\n\n            <ion-label>\n\n              Remember Me\n\n            </ion-label>\n\n            <ion-toggle color="positive" checked="false"></ion-toggle>\n\n          </ion-item>\n\n        </ion-list>\n\n        <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->\n\n        <!--<button id="login-button1" ion-button color="stable" name="sbmt" (click)="userLogin(userLoginInfo)" block>-->\n\n        <button id="login-button1" ion-button color="stable" name="sbmt"block>\n\n        Log in\n\n        </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <!--<form id="login-form1" (click)="userLogin()">-->\n\n    <form id="login-form1" (ngSubmit)="userLogin(userLoginInfo)">\n\n        <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n\n        <ion-list id="login-list1">\n\n          <ion-item id="login-input1">\n\n            <ion-label>\n\n              Email\n\n            </ion-label>\n\n            <ion-input type="email" [(ngModel)]="userLoginInfo.email" [ngModelOptions]="{standalone: true}" name="email" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-input2">\n\n            <ion-label>\n\n              Password\n\n            </ion-label>\n\n            <ion-input type="password" [(ngModel)]="userLoginInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-toggle1">\n\n            <ion-label>\n\n              Remember Me\n\n            </ion-label>\n\n            <ion-toggle color="positive" checked="false"></ion-toggle>\n\n          </ion-item>\n\n            <ion-label id="signup_label">\n\n                Not a member yet?\n\n            </ion-label>\n\n        </ion-list>\n\n        <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->\n\n        <!--<button id="login-button1" ion-button color="stable" name="sbmt" (click)="userLogin(userLoginInfo)" block>-->\n\n        <button id="login-button1" ion-button color="stable" name="sbmt"block>\n\n        Log in\n\n        </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */]])
     ], LoginPage);
     return LoginPage;
-    var LoginPage_1, _a, _b;
+    var LoginPage_1;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -301,7 +300,7 @@ var LoginServiceProvider = /** @class */ (function () {
     LoginServiceProvider.prototype.userLogin = function (data) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.http.post(_this.apiUrl + '/users/login', data)
+            _this.http.post(_this.apiUrl + '/users/login', JSON.stringify(data))
                 .subscribe(function (res) {
                 resolve(res);
             }, function (err) {
@@ -311,10 +310,9 @@ var LoginServiceProvider = /** @class */ (function () {
     };
     LoginServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], LoginServiceProvider);
     return LoginServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=login-service.js.map

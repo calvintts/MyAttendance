@@ -31,10 +31,12 @@ export class LoginPage {
   }
 
   userLogin() {
-    console.log("user log" + this.userLoginInfo.email);
     let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
         this.loginProvider.userLogin(param).then((result) => {
             console.log(result);
+            if(result){
+              this.navCtrl.push(ClassesPage);
+            }
         }, (err) => {
             console.log(err);
         });

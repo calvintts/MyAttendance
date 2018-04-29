@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content padding id="page2">
   <!--<form id="login-form1" (click)="userLogin()">-->
-    <form id="login-form1" (ngSubmit)="userLogin(userLoginInfo)">
+    <form id="login-form1">
         <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>
         <ion-list id="login-list1">
           <ion-item id="login-input1">
@@ -34,8 +34,11 @@
         </ion-list>
         <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->
         <!--<button id="login-button1" ion-button color="stable" name="sbmt" (click)="userLogin(userLoginInfo)" block>-->
-        <button id="login-button1" ion-button color="stable" name="sbmt"block>
-        Log in
+        <button id="login-button1" ion-button color="stable" (click)=userLogin(userLoginInfo) block>
+        Log in as Student
+        </button>
+        <button id="login-button2" ion-button color="stable" (click)=userLogin(userLoginInfo) block>
+        Log in as Instructor
         </button>
   </form>
 </ion-content>

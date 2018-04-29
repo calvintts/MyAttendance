@@ -42,6 +42,18 @@ export class LoginPage {
         });
   }
 
+  instructorLogin() {
+    let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
+        this.loginProvider.instructorLogin(param).then((result) => {
+            console.log(result);
+            if(result){
+              this.navCtrl.push(ClassesPage);
+            }
+        }, (err) => {
+            console.log(err);
+        });
+  }
+
   goToClasses(params){
     if (!params) params = {};
     this.navCtrl.push(ClassesPage);

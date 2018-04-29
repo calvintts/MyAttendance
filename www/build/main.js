@@ -208,6 +208,13 @@ var AttendancesheetPage = /** @class */ (function () {
         // });
         this.geolocation.getCurrentPosition().then(function (pos) {
             _this.position = pos;
+            var locationdata = [_this.position.coords.longitude, _this.position.coords.latitude];
+            var param = { "classNumber": _this.startAttendanceInfo.classNumber, "location": locationdata };
+            _this.attendanceProvider.startAttendance(param).then(function (result) {
+                console.log(result);
+            }, function (err) {
+                console.log(err);
+            });
             console.log(pos);
         });
     };
@@ -247,7 +254,7 @@ var AttendancesheetPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__calander_class_two_calander_class_two__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__class_one_class_one__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__calander_class_one_calander_class_one__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -298,6 +305,7 @@ var LoginPage = /** @class */ (function () {
     LoginPage.prototype.instructorLogin = function () {
         var _this = this;
         var param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password };
+        // const item = sessionStorage.getItem('user');
         this.loginProvider.instructorLogin(param).then(function (result) {
             console.log(result);
             if (result) {
@@ -427,7 +435,7 @@ webpackEmptyAsyncContext.id = 132;
 
 var map = {
 	"../pages/close-attendance/close-attendance.module": [
-		300,
+		302,
 		0
 	]
 };
@@ -672,7 +680,7 @@ var ClassNumFinderProvider = /** @class */ (function () {
     ClassNumFinderProvider.prototype.classCheckIn = function (data) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.http.post(_this.apiUrl + '/attendance', data)
+            _this.http.post(_this.apiUrl + '/attendance/', data)
                 .subscribe(function (res) {
                 resolve(res);
             }, function (err) {
@@ -727,6 +735,173 @@ var CalanderClassThreePage = /** @class */ (function () {
 /***/ }),
 
 /***/ 220:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherStudentSignUpPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_classes__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__calander_calander__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__class_six_class_six__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__complete_complete__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__calander_class_six_calander_class_six__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__class_five_class_five__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__calander_class_five_calander_class_five__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__class_four_class_four__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__calander_class_four_calander_class_four__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__class_three_class_three__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__calander_class_three_calander_class_three__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__class_two_class_two__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__calander_class_two_calander_class_two__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__class_one_class_one__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__calander_class_one_calander_class_one__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__ = __webpack_require__(222);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TeacherStudentSignUpPage = /** @class */ (function () {
+    function TeacherStudentSignUpPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    TeacherStudentSignUpPage_1 = TeacherStudentSignUpPage;
+    TeacherStudentSignUpPage.prototype.goToSignup = function (params) {
+        // if (!params) params = {};
+        if (params == 1) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__["a" /* TeacherSignupPage */]);
+        }
+        else if (params == 2) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__signup_signup__["a" /* SignupPage */]);
+        }
+    };
+    TeacherStudentSignUpPage.prototype.goToLogin = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClasses = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__classes_classes__["a" /* ClassesPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalander = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__calander_calander__["a" /* CalanderPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassSix = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__class_six_class_six__["a" /* ClassSixPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToComplete = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__complete_complete__["a" /* CompletePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassSix = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassFive = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__class_five_class_five__["a" /* ClassFivePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassFive = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassFour = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__class_four_class_four__["a" /* ClassFourPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassFour = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassThree = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__class_three_class_three__["a" /* ClassThreePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassThree = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassTwo = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__class_two_class_two__["a" /* ClassTwoPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassTwo = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToClassOne = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__class_one_class_one__["a" /* ClassOnePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToCalanderClassOne = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_18__calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */]);
+    };
+    TeacherStudentSignUpPage.prototype.goToTeacherStudentSignUp = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(TeacherStudentSignUpPage_1);
+    };
+    TeacherStudentSignUpPage = TeacherStudentSignUpPage_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-teacher-student-sign-up',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Teacher/Student Sign Up\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page18">\n  <div class="spacer" style="width:283px;height:122px;" id="teacherStudentSignUp-spacer21"></div>\n  <button id="teacherSignupBtn" ion-button color="positive" block (click)="goToSignup(1)">\n    Teacher\n  </button>\n  <button id="studentSignupBtn" ion-button color="positive" block (click)="goToSignup(2)">\n    Student\n  </button>\n  <button id="teacherStudentSignUp-button15" ion-button color="positive" block (click)="goToLogin()">\n    Go Back\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], TeacherStudentSignUpPage);
+    return TeacherStudentSignUpPage;
+    var TeacherStudentSignUpPage_1;
+}());
+
+//# sourceMappingURL=teacher-student-sign-up.js.map
+
+/***/ }),
+
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -843,7 +1018,7 @@ var SignupPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -976,13 +1151,13 @@ var TeacherSignupPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(245);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1060,7 +1235,7 @@ var CalanderClassOnePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 243:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1071,13 +1246,13 @@ var CalanderClassOnePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_register_service_register_service__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_teacher_signup_teacher_signup__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_teacher_signup_teacher_signup__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signup_signup__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_classes_classes__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_class_one_class_one__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_class_two_class_two__ = __webpack_require__(32);
@@ -1098,12 +1273,16 @@ var CalanderClassOnePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_class_num_finder_class_num_finder__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_attendance_sheets_attendance_sheets__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_attendancesheet_attendancesheet__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_angular_webstorage_service__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_session_storage_session_storage__ = __webpack_require__(301);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -1168,6 +1347,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_33_angular_webstorage_service__["b" /* StorageServiceModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
@@ -1207,7 +1387,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__["a" /* LoginServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_9__providers_register_service_register_service__["a" /* RegisterServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_30__providers_class_num_finder_class_num_finder__["a" /* ClassNumFinderProvider */],
-                __WEBPACK_IMPORTED_MODULE_31__providers_attendance_sheets_attendance_sheets__["a" /* AttendanceSheetsProvider */]
+                __WEBPACK_IMPORTED_MODULE_31__providers_attendance_sheets_attendance_sheets__["a" /* AttendanceSheetsProvider */],
+                __WEBPACK_IMPORTED_MODULE_34__providers_session_storage_session_storage__["a" /* SessionStorageProvider */]
             ]
         })
     ], AppModule);
@@ -1240,6 +1421,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__calander_class_two_calander_class_two__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__class_one_class_one__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__calander_class_one_calander_class_one__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__attendancesheet_attendancesheet__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1267,11 +1449,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ClassesPage = /** @class */ (function () {
     function ClassesPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
     ClassesPage_1 = ClassesPage;
+    ClassesPage.prototype.addClasses = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__attendancesheet_attendancesheet__["a" /* AttendancesheetPage */]);
+    };
     ClassesPage.prototype.goToLogin = function (params) {
         if (!params)
             params = {};
@@ -1354,7 +1540,7 @@ var ClassesPage = /** @class */ (function () {
     };
     ClassesPage = ClassesPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-classes',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Classes\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page3">\n\n  <button id="classes-button3" ion-button color="positive" block on-click="goToClassOne()">\n\n    Class One\n\n  </button>\n\n  <button id="classes-button4" ion-button color="positive" block on-click="goToClassTwo()">\n\n    Class Two\n\n  </button>\n\n  <button id="classes-button5" ion-button color="positive" block on-click="goToClassThree()">\n\n    Class Three\n\n  </button>\n\n  <button id="classes-button6" ion-button color="positive" block on-click="goToClassFour()">\n\n    Class Four\n\n  </button>\n\n  <button id="classes-button7" ion-button color="positive" block on-click="goToClassFive()">\n\n    Class Five\n\n  </button>\n\n  <button id="classes-button8" ion-button color="positive" block on-click="goToClassSix()">\n\n    Class Six\n\n  </button>\n\n  <div class="spacer" style="width:283px;height:50px;" id="classes-spacer9"></div>\n\n  <button id="classes-button24" ion-button clear color="assertive" large on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classes-button29" ion-button clear color="assertive" large on-click="goToLogin()"></button>\n\n  <button id="classes-button25" ion-button clear color="positive" large>\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classes-button23" ion-button clear color="positive" large style="border-radius:1px 1px 1px 1px;" on-click="goToCalander()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/
+            selector: 'page-classes',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Classes\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page3">\n\n  <button id="classes-add" ion-button clear color="positive" large style="border-radius:1px 1px 1px 1px;" (click)="addClasses()">\n\n    <ion-icon name="add"></ion-icon>\n\n  </button>\n\n  <button id="classes-button3" ion-button color="positive" block on-click="goToClassOne()">\n\n    Class One\n\n  </button>\n\n  <button id="classes-button4" ion-button color="positive" block on-click="goToClassTwo()">\n\n    Class Two\n\n  </button>\n\n  <button id="classes-button5" ion-button color="positive" block on-click="goToClassThree()">\n\n    Class Three\n\n  </button>\n\n  <button id="classes-button6" ion-button color="positive" block on-click="goToClassFour()">\n\n    Class Four\n\n  </button>\n\n  <button id="classes-button7" ion-button color="positive" block on-click="goToClassFive()">\n\n    Class Five\n\n  </button>\n\n  <button id="classes-button8" ion-button color="positive" block on-click="goToClassSix()">\n\n    Class Six\n\n  </button>\n\n  <div class="spacer" style="width:283px;height:50px;" id="classes-spacer9"></div>\n\n  <button id="classes-button24" ion-button clear color="assertive" large on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classes-button29" ion-button clear color="assertive" large on-click="goToLogin()"></button>\n\n  <button id="classes-button25" ion-button clear color="positive" large>\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classes-button23" ion-button clear color="positive" large style="border-radius:1px 1px 1px 1px;" on-click="goToCalander()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], ClassesPage);
@@ -1662,219 +1848,6 @@ var ClassFivePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 298:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            splashScreen.hide();
-        });
-    }
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/'<ion-nav #mainContent [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-    ], MyApp);
-    return MyApp;
-}());
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 299:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherStudentSignUpPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_classes__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__calander_calander__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__class_six_class_six__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__complete_complete__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__calander_class_six_calander_class_six__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__class_five_class_five__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__calander_class_five_calander_class_five__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__class_four_class_four__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__calander_class_four_calander_class_four__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__class_three_class_three__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__calander_class_three_calander_class_three__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__class_two_class_two__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__calander_class_two_calander_class_two__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__class_one_class_one__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__calander_class_one_calander_class_one__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__ = __webpack_require__(221);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var TeacherStudentSignUpPage = /** @class */ (function () {
-    function TeacherStudentSignUpPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    TeacherStudentSignUpPage_1 = TeacherStudentSignUpPage;
-    TeacherStudentSignUpPage.prototype.goToSignup = function (params) {
-        // if (!params) params = {};
-        if (params == 1) {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__["a" /* TeacherSignupPage */]);
-        }
-        else if (params == 2) {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__signup_signup__["a" /* SignupPage */]);
-        }
-    };
-    TeacherStudentSignUpPage.prototype.goToLogin = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__login_login__["a" /* LoginPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClasses = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__classes_classes__["a" /* ClassesPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalander = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__calander_calander__["a" /* CalanderPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassSix = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__class_six_class_six__["a" /* ClassSixPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToComplete = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__complete_complete__["a" /* CompletePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassSix = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassFive = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__class_five_class_five__["a" /* ClassFivePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassFive = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassFour = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__class_four_class_four__["a" /* ClassFourPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassFour = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassThree = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__class_three_class_three__["a" /* ClassThreePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassThree = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassTwo = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__class_two_class_two__["a" /* ClassTwoPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassTwo = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToClassOne = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__class_one_class_one__["a" /* ClassOnePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToCalanderClassOne = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_18__calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */]);
-    };
-    TeacherStudentSignUpPage.prototype.goToTeacherStudentSignUp = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(TeacherStudentSignUpPage_1);
-    };
-    TeacherStudentSignUpPage = TeacherStudentSignUpPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-teacher-student-sign-up',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Teacher/Student Sign Up\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page18">\n  <div class="spacer" style="width:283px;height:122px;" id="teacherStudentSignUp-spacer21"></div>\n  <button id="teacherSignupBtn" ion-button color="positive" block (click)="goToSignup(1)">\n    Teacher\n  </button>\n  <button id="studentSignupBtn" ion-button color="positive" block (click)="goToSignup(2)">\n    Student\n  </button>\n  <button id="teacherStudentSignUp-button15" ion-button color="positive" block (click)="goToLogin()">\n    Go Back\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
-    ], TeacherStudentSignUpPage);
-    return TeacherStudentSignUpPage;
-    var TeacherStudentSignUpPage_1;
-}());
-
-//# sourceMappingURL=teacher-student-sign-up.js.map
-
-/***/ }),
-
 /***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2020,6 +1993,97 @@ var ClassFourPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=class-four.js.map
+
+/***/ }),
+
+/***/ 300:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            splashScreen.hide();
+        });
+    }
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/'<ion-nav #mainContent [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 301:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SessionStorageProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_webstorage_service__ = __webpack_require__(223);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var STORAGE_KEY = 'pure-awesomeness';
+/*
+  Generated class for the SessionStorageProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var SessionStorageProvider = /** @class */ (function () {
+    function SessionStorageProvider(storage) {
+        this.storage = storage;
+        console.log('Hello SessionStorageProvider Provider');
+    }
+    SessionStorageProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1_angular_webstorage_service__["a" /* SESSION_STORAGE */])),
+        __metadata("design:paramtypes", [Object])
+    ], SessionStorageProvider);
+    return SessionStorageProvider;
+}());
+
+//# sourceMappingURL=session-storage.js.map
 
 /***/ }),
 
@@ -2377,6 +2441,8 @@ var ClassOnePage = /** @class */ (function () {
     ClassOnePage_1 = ClassOnePage;
     ClassOnePage.prototype.checkInClass = function () {
         var _this = this;
+        var item = sessionStorage.getItem('user');
+        console.log(item);
         var param = { "classNumber": this.classNumInfo.classNumber };
         this.classNumFinder.classCheckIn(param).then(function (result) {
             console.log(result);
@@ -2467,10 +2533,10 @@ var ClassOnePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-class-one',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-one\class-one.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Class Right Now\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page4">\n\n  <div id="classOne-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <!--<div id="plzInputClassNum">Please input your class number</div>-->\n\n    <!--Please input your class number : <ion-input type="text" id="classNumInput" [(ngModel)]="classNumInfo.classNumber" [ngModelOptions]="{standalone: true}" name="classNum" placeholder=""></ion-input>-->\n\n    <!--<p style="color:#000000;">-->\n\n      <!--Class not active-->\n\n    <!--</p>-->\n\n    <ion-item id="signup-input4">\n\n      <ion-label>\n\n        Class number :\n\n      </ion-label>\n\n      <ion-input type="text" [(ngModel)]="classNumInfo.classNumber" [ngModelOptions]="{standalone: true}" name="classNumber" placeholder=""></ion-input>\n\n    </ion-item>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classOne-spacer2"></div>\n\n  <button id="classOne-button9" ion-button color="positive" block (click)="checkInClass()">\n\n    Check in.\n\n  </button>\n\n  <button id="classOne-button10" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classOne-spacer10"></div>\n\n  <button id="classOne-button30" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classOne-button31" ion-button clear color="stable" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classOne-button32" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classOne-button33" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassOne()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-one\class-one.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_16__providers_class_num_finder_class_num_finder__["a" /* ClassNumFinderProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_16__providers_class_num_finder_class_num_finder__["a" /* ClassNumFinderProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__providers_class_num_finder_class_num_finder__["a" /* ClassNumFinderProvider */]) === "function" && _b || Object])
     ], ClassOnePage);
     return ClassOnePage;
-    var ClassOnePage_1;
+    var ClassOnePage_1, _a, _b;
 }());
 
 //# sourceMappingURL=class-one.js.map
@@ -2625,5 +2691,5 @@ var CompletePage = /** @class */ (function () {
 
 /***/ })
 
-},[222]);
+},[224]);
 //# sourceMappingURL=main.js.map

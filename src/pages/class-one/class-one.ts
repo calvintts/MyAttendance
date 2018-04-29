@@ -29,8 +29,9 @@ export class ClassOnePage {
   constructor(public navCtrl: NavController, public classNumFinder: ClassNumFinderProvider) {
   }
 
-
   checkInClass(){
+      const item = sessionStorage.getItem('user');
+    console.log(item);
     let param = {"classNumber":this.classNumInfo.classNumber};
       this.classNumFinder.classCheckIn(param).then((result) =>{
           console.log(result);

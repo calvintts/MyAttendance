@@ -19,7 +19,7 @@ export class ClassNumFinderProvider {
 
     classCheckIn(data) {
         return new Promise((resolve, reject) => {
-            this.http.post(this.apiUrl+'/attendance', data)
+            this.http.post(this.apiUrl+'/attendance/', data)
                 .subscribe(res => {
                     resolve(res);
                 }, (err) => {

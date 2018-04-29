@@ -32,7 +32,7 @@ export class LoginPage {
   }
 
   userLogin() {
-    let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
+    let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password};
         this.loginProvider.userLogin(param).then((result) => {
             console.log(result);
             if(result){
@@ -45,6 +45,7 @@ export class LoginPage {
 
   instructorLogin() {
     let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
+    // const item = sessionStorage.getItem('user');
         this.loginProvider.instructorLogin(param).then((result) => {
             console.log(result);
             if(result){

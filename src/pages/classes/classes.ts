@@ -16,6 +16,7 @@ import { ClassTwoPage } from '../class-two/class-two';
 import { CalanderClassTwoPage } from '../calander-class-two/calander-class-two';
 import { ClassOnePage } from '../class-one/class-one';
 import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
+import {AttendancesheetPage} from "../attendancesheet/attendancesheet";
 
 @Component({
   selector: 'page-classes',
@@ -25,6 +26,9 @@ export class ClassesPage {
 
   constructor(public navCtrl: NavController) {
   }
+    addClasses() {
+        this.navCtrl.push(AttendancesheetPage);
+    }
   goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);

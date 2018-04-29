@@ -57,6 +57,14 @@ export class AttendancesheetPage {
 
       this.geolocation.getCurrentPosition().then((pos:Geoposition) => {
         this.position = pos;
+        let locationdata = [this.position.coords.longitude, this.position.coords.latitude];
+          let param = {"classNumber":this.startAttendanceInfo.classNumber, "location":locationdata};
+          this.attendanceProvider.startAttendance(param).then((result) => {
+            console.log(result);
+
+          }, (err) => {
+            console.log(err);
+          });
         console.log(pos);
       });
   }

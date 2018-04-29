@@ -31,6 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ClassNumFinderProvider } from '../providers/class-num-finder/class-num-finder';
 import { AttendanceSheetsProvider } from '../providers/attendance-sheets/attendance-sheets';
 import { AttendancesheetPage} from "../pages/attendancesheet/attendancesheet";
+import { StorageServiceModule} from "angular-webstorage-service";
+import { SessionStorageProvider } from '../providers/session-storage/session-storage';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { AttendancesheetPage} from "../pages/attendancesheet/attendancesheet";
   imports: [
     BrowserModule,
       HttpClientModule,
+      StorageServiceModule,
       FormsModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -94,7 +97,8 @@ import { AttendancesheetPage} from "../pages/attendancesheet/attendancesheet";
     LoginServiceProvider,
     RegisterServiceProvider,
     ClassNumFinderProvider,
-    AttendanceSheetsProvider
+    AttendanceSheetsProvider,
+    SessionStorageProvider
   ]
 })
 export class AppModule {}

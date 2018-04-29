@@ -36,10 +36,10 @@
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" [(ngModel)]="teacherSignupInfo.password" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
+        <ion-input type="password" [(ngModel)]="teacherSignupInfo.password" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
-    <button id="teacherSignup-button16" ion-button color="positive" block (click)=teacherSignup(userLoginInfo) >
+    <button id="teacherSignup-button16" ion-button color="positive" block (click)=instructorRegister(teacherSignupInfo) >
       Sign up
     </button>
   </form>

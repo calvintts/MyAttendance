@@ -28,8 +28,6 @@ import { CalanderClassFivePage } from '../pages/calander-class-five/calander-cla
 import { CalanderClassSixPage } from '../pages/calander-class-six/calander-class-six';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TeacherSignupProvider } from '../providers/teacher-signup/teacher-signup';
-
 
 @NgModule({
   declarations: [
@@ -89,11 +87,7 @@ import { TeacherSignupProvider } from '../providers/teacher-signup/teacher-signu
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginServiceProvider,
-<<<<<<< HEAD
-    TeacherSignupProvider
-=======
     RegisterServiceProvider
->>>>>>> origin/master
   ]
 })
 export class AppModule {}

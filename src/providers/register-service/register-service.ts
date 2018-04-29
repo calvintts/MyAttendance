@@ -20,7 +20,7 @@ export class RegisterServiceProvider {
 
     userRegister(data) {
     return new Promise((resolve, reject) => {
-        this.http.post(this.apiUrl+'/users/login', data)
+        this.http.post(this.apiUrl+'/users/register', data)
             .subscribe(res => {
                 resolve(res);
             }, (err) => {

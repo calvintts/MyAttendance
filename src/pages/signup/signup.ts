@@ -1,24 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { ClassesPage } from '../classes/classes';
 import { RegisterServiceProvider } from '../../providers/register-service/register-service'
-import { CalanderPage } from '../calander/calander';
-import { ClassSixPage } from '../class-six/class-six';
-import { CompletePage } from '../complete/complete';
-import { CalanderClassSixPage } from '../calander-class-six/calander-class-six';
-import { ClassFivePage } from '../class-five/class-five';
-import { CalanderClassFivePage } from '../calander-class-five/calander-class-five';
-import { ClassFourPage } from '../class-four/class-four';
-import { CalanderClassFourPage } from '../calander-class-four/calander-class-four';
-import { ClassThreePage } from '../class-three/class-three';
-import { CalanderClassThreePage } from '../calander-class-three/calander-class-three';
-import { ClassTwoPage } from '../class-two/class-two';
-import { CalanderClassTwoPage } from '../calander-class-two/calander-class-two';
-import { ClassOnePage } from '../class-one/class-one';
-import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
-import { TeacherStudentSignUpPage } from '../teacher-student-sign-up/teacher-student-sign-up';
-//import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-signup',

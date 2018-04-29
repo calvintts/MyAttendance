@@ -39,7 +39,7 @@
         <ion-input type="password" [(ngModel)]="userRegisterInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
-    <button id="signup-button11" ion-button color="positive" block (onclick)="userRegister(userRegisterInfo)">
+    <button id="signup-button11" ion-button color="positive" (click)="userRegister(userRegisterInfo)" block>
       Sign up
     </button>
   </form>

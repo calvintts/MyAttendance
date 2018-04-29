@@ -29,4 +29,15 @@ export class LoginServiceProvider {
     });
   }
 
+  instructorLogin(data) {
+  return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'/instructor/login', data)
+          .subscribe(res => {
+              resolve(res);
+          }, (err) => {
+              reject(err);
+          });
+  });
+}
+
 }

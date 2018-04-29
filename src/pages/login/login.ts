@@ -43,10 +43,20 @@ export class LoginPage {
         });
   }
 
-  goToSignup() {
-    this.navCtrl.push(TeacherStudentSignUpPage);
+  instructorLogin() {
+    let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
+        this.loginProvider.instructorLogin(param).then((result) => {
+            console.log(result);
+            if(result){
+              this.navCtrl.push(ClassesPage);
+            }
+        }, (err) => {
+            console.log(err);
+        });
   }
-
+    goToSignup() {
+        this.navCtrl.push(TeacherStudentSignUpPage);
+    }
   goToClasses(params){
     if (!params) params = {};
     this.navCtrl.push(ClassesPage);

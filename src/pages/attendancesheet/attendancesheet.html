@@ -1,0 +1,23 @@
+<!--
+  Generated template for the AttendancesheetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Attendance</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item id="login-input1">
+    <ion-label>
+      Class Number
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="classNumber" [ngModelOptions]="{standalone: true}" name="classNumber" placeholder=""></ion-input>
+  </ion-item>
+  <ion-button (click)=startAttendance()><ion-icon name="add"></ion-icon><ion-button>
+</ion-content>

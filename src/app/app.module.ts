@@ -9,6 +9,8 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { LoginPage } from '../pages/login/login';
 import { RegisterServiceProvider } from '../providers/register-service/register-service';
 import { TeacherStudentSignUpPage } from "../pages/teacher-student-sign-up/teacher-student-sign-up";
+import { TeacherSignupPage} from "../pages/teacher-signup/teacher-signup";
+import { SignupPage} from "../pages/signup/signup";
 import { ClassesPage } from '../pages/classes/classes';
 import { ClassOnePage } from '../pages/class-one/class-one';
 import { ClassTwoPage } from '../pages/class-two/class-two';
@@ -33,6 +35,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     LoginPage,
       TeacherStudentSignUpPage,
+      TeacherSignupPage,
+      SignupPage,
     ClassesPage,
     ClassOnePage,
     ClassTwoPage,
@@ -61,6 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     LoginPage,
       TeacherStudentSignUpPage,
+      TeacherSignupPage,
+      SignupPage,
     ClassesPage,
     ClassOnePage,
     ClassTwoPage,

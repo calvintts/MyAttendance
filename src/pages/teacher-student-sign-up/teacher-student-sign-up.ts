@@ -17,7 +17,7 @@ import { ClassTwoPage } from '../class-two/class-two';
 import { CalanderClassTwoPage } from '../calander-class-two/calander-class-two';
 import { ClassOnePage } from '../class-one/class-one';
 import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
-//import { TeacherStudentSignUpPage } from '../teacher-student-sign-up/teacher-student-sign-up';
+import {TeacherSignupPage} from "../teacher-signup/teacher-signup";
 
 @Component({
   selector: 'page-teacher-student-sign-up',
@@ -29,8 +29,12 @@ export class TeacherStudentSignUpPage {
   }
 
   goToSignup(params){
-    if (!params) params = {};
-    this.navCtrl.push(SignupPage);
+    // if (!params) params = {};
+    if(params == 1) {
+        this.navCtrl.push(TeacherSignupPage);
+    } else if(params == 2) {
+        this.navCtrl.push(SignupPage);
+    }
   }goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);

@@ -23,7 +23,7 @@ export class SignupPage {
       "firstname":this.userRegisterInfo.firstname,
       "lastname":this.userRegisterInfo.lastname,
       "id_number":this.userRegisterInfo.id_number
-    }
+    };
     this.registerProvider.userRegister(param).then((result) =>{
       console.log(result);
       if(result){

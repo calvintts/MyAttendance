@@ -20,7 +20,7 @@ export class LoginServiceProvider {
 
     stopAttendance(){
       return new Promise((resolve,reject)=>{
-        this.http.get(this.apiUrl+'/class/end',data)
+        this.http.get(this.apiUrl+'/class/end')
         .subscribe(res=>{
           resolve(res);},
           (err)=>{

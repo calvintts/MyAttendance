@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ClassesPage } from '../classes/classes';
 import { LoginServiceProvider} from '../../providers/login-service/login-service';
-// import { LoginPage } from '../login/login';
 import { CalanderPage } from '../calander/calander';
 import { ClassSixPage } from '../class-six/class-six';
 import { CompletePage } from '../complete/complete';
@@ -18,6 +17,7 @@ import { CalanderClassTwoPage } from '../calander-class-two/calander-class-two';
 import { ClassOnePage } from '../class-one/class-one';
 import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
 import { TeacherStudentSignUpPage } from "../teacher-student-sign-up/teacher-student-sign-up";
+import {AttendancesheetPage} from "../attendancesheet/attendancesheet";
 
 @Component({
   selector: 'page-login',
@@ -36,7 +36,7 @@ export class LoginPage {
         this.loginProvider.userLogin(param).then((result) => {
             console.log(result);
             if(result){
-              this.navCtrl.push(ClassesPage);
+              this.navCtrl.push(ClassOnePage);
             }
         }, (err) => {
             console.log(err);
@@ -56,6 +56,7 @@ export class LoginPage {
   }
     goToSignup() {
         this.navCtrl.push(TeacherStudentSignUpPage);
+        // this.navCtrl.push(AttendancesheetPage);
     }
   goToClasses(params){
     if (!params) params = {};

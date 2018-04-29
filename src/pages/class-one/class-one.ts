@@ -16,6 +16,7 @@ import { ClassTwoPage } from '../class-two/class-two';
 import { CalanderClassTwoPage } from '../calander-class-two/calander-class-two';
 //import { ClassOnePage } from '../class-one/class-one';
 import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
+import { ClassNumFinderProvider} from "../../providers/class-num-finder/class-num-finder";
 
 @Component({
   selector: 'page-class-one',
@@ -23,11 +24,24 @@ import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
 })
 export class ClassOnePage {
 
-  constructor(public navCtrl: NavController) {
+    classNumInfo = {classNumber:''};
+
+  constructor(public navCtrl: NavController, public classNumFinder: ClassNumFinderProvider) {
   }
-  goToComplete(params){
-    if (!params) params = {};
-    this.navCtrl.push(CompletePage);
+
+
+  checkInClass(){
+    let param = {"classNumber":this.classNumInfo.classNumber};
+      this.classNumFinder.classCheckIn(param).then((result) =>{
+          console.log(result);
+          if(result){
+              this.navCtrl.push(LoginPage);
+          }
+      },(err)=>{
+          console.log(err);
+      });
+
+    //this.navCtrl.push(CompletePage);
   }goToClasses(params){
     if (!params) params = {};
     this.navCtrl.push(ClassesPage);

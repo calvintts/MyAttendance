@@ -23,7 +23,7 @@ export class CloseAttendancePage {
     this.getHelper.stopAttendance().then((result)=>{
       console.log(result);
       if(result){
-        this.navCtrl.push(attendancesheetPage);
+        this.navCtrl.push(AttendancesheetPage);
       }
     })
   }

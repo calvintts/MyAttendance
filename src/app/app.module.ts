@@ -1,8 +1,8 @@
+import { Geolocation} from "@ionic-native/geolocation";
 import { FormsModule} from "@angular/forms";
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { HttpModule} from "@angular/http";
 import { HttpClientModule} from "@angular/common/http";
 import { MyApp } from './app.component';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
@@ -28,6 +28,9 @@ import { CalanderClassFivePage } from '../pages/calander-class-five/calander-cla
 import { CalanderClassSixPage } from '../pages/calander-class-six/calander-class-six';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ClassNumFinderProvider } from '../providers/class-num-finder/class-num-finder';
+import { AttendanceSheetsProvider } from '../providers/attendance-sheets/attendance-sheets';
+import { AttendancesheetPage} from "../pages/attendancesheet/attendancesheet";
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
       TeacherStudentSignUpPage,
       TeacherSignupPage,
+      AttendancesheetPage,
       SignupPage,
     ClassesPage,
     ClassOnePage,
@@ -55,7 +59,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
       HttpClientModule,
-      HttpModule,
       FormsModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -65,6 +68,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
       TeacherStudentSignUpPage,
       TeacherSignupPage,
+      AttendancesheetPage,
       SignupPage,
     ClassesPage,
     ClassOnePage,
@@ -84,10 +88,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     StatusBar,
+      Geolocation,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginServiceProvider,
-    RegisterServiceProvider
+    RegisterServiceProvider,
+    ClassNumFinderProvider,
+    AttendanceSheetsProvider
   ]
 })
 export class AppModule {}

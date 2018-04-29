@@ -30,14 +30,14 @@ export class RegisterServiceProvider {
   }
 
   instructorRegister(data) {
-  return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.http.post(this.apiUrl+'/instructor/register', data)
           .subscribe(res => {
               resolve(res);
           }, (err) => {
               reject(err);
           });
-  });
-}
+      });
+  }
 
 }

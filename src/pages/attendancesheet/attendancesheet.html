@@ -17,7 +17,7 @@
     <ion-label>
       Class Number
     </ion-label>
-    <ion-input type="number" [(ngModel)]="classNumber" [ngModelOptions]="{standalone: true}" name="classNumber" placeholder=""></ion-input>
+    <ion-input type="number" [(ngModel)]="startAttendanceInfo.classNumber" [ngModelOptions]="{standalone: true}" name="classNumber" placeholder=""></ion-input>
   </ion-item>
-  <ion-button (click)=startAttendance()><ion-icon name="add"></ion-icon><ion-button>
+  <button ion-button color="positive" block (click)=startAttendance()>Add</button>
 </ion-content>

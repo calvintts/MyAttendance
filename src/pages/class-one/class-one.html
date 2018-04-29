@@ -1,18 +1,26 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      ClassOne
+      Class Right Now
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page4">
   <div id="classOne-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
-    <p style="color:#000000;">
-      Class not active
-    </p>
+    <!--<div id="plzInputClassNum">Please input your class number</div>-->
+    <!--Please input your class number : <ion-input type="text" id="classNumInput" [(ngModel)]="classNumInfo.classNumber" [ngModelOptions]="{standalone: true}" name="classNum" placeholder=""></ion-input>-->
+    <!--<p style="color:#000000;">-->
+      <!--Class not active-->
+    <!--</p>-->
+    <ion-item id="signup-input4">
+      <ion-label>
+        Class number :
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="classNumInfo.classNumber" [ngModelOptions]="{standalone: true}" name="classNumber" placeholder=""></ion-input>
+    </ion-item>
   </div>
   <div class="spacer" style="width:283px;height:126px;" id="classOne-spacer2"></div>
-  <button id="classOne-button9" ion-button color="positive" block on-click="goToComplete()">
+  <button id="classOne-button9" ion-button color="positive" block (click)="checkInClass()">
     Check in.
   </button>
   <button id="classOne-button10" ion-button color="positive" block on-click="goToClasses()">

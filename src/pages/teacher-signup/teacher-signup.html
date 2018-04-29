@@ -12,34 +12,34 @@
         <ion-label>
           First Name
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="teacherSignupInfo.firstname" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="teacherSignup-input10">
         <ion-label>
           Last Name
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="teacherSignupInfo.lastname" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="teacherSignup-input11">
         <ion-label>
           Teacher ID
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="teacherSignupInfo.id_number" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="teacherSignup-input12">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" [(ngModel)]="teacherSignupInfo.email" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="teacherSignup-input13">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="teacherSignupInfo.password" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
-    <button id="teacherSignup-button16" ion-button color="positive" block on-click="goToLogin()">
+    <button id="teacherSignup-button16" ion-button color="positive" block (click)=teacherSignup(userLoginInfo) >
       Sign up
     </button>
   </form>

@@ -18,6 +18,8 @@ import { ClassOnePage } from '../class-one/class-one';
 import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
 import { TeacherStudentSignUpPage } from '../teacher-student-sign-up/teacher-student-sign-up';
 import { SignupPage } from '../signup/signup';
+import { RegisterServiceProvider } from '../../providers/register-service/register-service';
+import {LoginServiceProvider} from "../../providers/login-service/login-service";
 
 @Component({
   selector: 'page-teacher-signup',
@@ -25,8 +27,12 @@ import { SignupPage } from '../signup/signup';
 })
 export class TeacherSignupPage {
 
-  constructor(public navCtrl: NavController) {
+    teacherSignupInfo = {firstname: '', lastname: '', }
+
+  constructor(public navCtrl: NavController, public registerProvider: RegisterServiceProvider) {
   }
+
+
   goToLogin(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);

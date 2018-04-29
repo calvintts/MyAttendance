@@ -50,6 +50,7 @@ export class SignupPage {
       console.log(err);
     });
   }
+}
 
 
 //   goToLogin(params){

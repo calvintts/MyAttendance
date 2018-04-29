@@ -18,6 +18,17 @@ export class LoginServiceProvider {
     console.log('Hello LoginServiceProvider Provider');
   }
 
+    stopAttendance(){
+      return new Promise((resolve,reject)=>{
+        this.http.get(this.apiUrl+'/class/end',data)
+        .subscribe(res=>{
+          resolve(res);},
+          (err)=>{
+            reject(err);
+          });
+        });
+    }
+
     userLogin(data) {
     return new Promise((resolve, reject) => {
         this.http.post(this.apiUrl+'/users/login', data)

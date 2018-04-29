@@ -7,6 +7,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { MyApp } from './app.component';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { LoginPage } from '../pages/login/login';
+import { RegisterServiceProvider } from '../providers/register-service/register-service';
 import { TeacherStudentSignUpPage } from "../pages/teacher-student-sign-up/teacher-student-sign-up";
 import { ClassesPage } from '../pages/classes/classes';
 import { ClassOnePage } from '../pages/class-one/class-one';
@@ -80,7 +81,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginServiceProvider
+    LoginServiceProvider,
+    RegisterServiceProvider
   ]
 })
 export class AppModule {}

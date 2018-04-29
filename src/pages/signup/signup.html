@@ -12,34 +12,34 @@
         <ion-label>
           First Name
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="userRegisterInfo.firstname" [ngModelOptions]="{standalone: true}" name="firstname" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="signup-input8">
         <ion-label>
           Last Name
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="userRegisterInfo.lastname" [ngModelOptions]="{standalone: true}" name="lastname" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="signup-input7">
         <ion-label>
           ID
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="userRegisterInfo.id_number" [ngModelOptions]="{standalone: true}" name="id_number" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="signup-input5">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email" [(ngModel)]="userRegisterInfo.email" [ngModelOptions]="{standalone: true}" name="email" placeholder=""></ion-input>
       </ion-item>
       <ion-item id="signup-input6">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="password" [(ngModel)]="userRegisterInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>
       </ion-item>
     </ion-list>
-    <button id="signup-button11" ion-button color="positive" block on-click="goToLogin()">
+    <button id="signup-button11" ion-button color="positive" block (onclick)="userRegister(userRegisterInfo)">
       Sign up
     </button>
   </form>

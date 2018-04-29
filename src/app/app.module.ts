@@ -7,6 +7,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { MyApp } from './app.component';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { LoginPage } from '../pages/login/login';
+import { RegisterServiceProvider } from '../providers/register-service/register-service';
 import { TeacherStudentSignUpPage } from "../pages/teacher-student-sign-up/teacher-student-sign-up";
 import { TeacherSignupPage} from "../pages/teacher-signup/teacher-signup";
 import { SignupPage} from "../pages/signup/signup";
@@ -88,7 +89,11 @@ import { TeacherSignupProvider } from '../providers/teacher-signup/teacher-signu
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginServiceProvider,
+<<<<<<< HEAD
     TeacherSignupProvider
+=======
+    RegisterServiceProvider
+>>>>>>> origin/master
   ]
 })
 export class AppModule {}

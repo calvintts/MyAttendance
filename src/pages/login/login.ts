@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ClassesPage } from '../classes/classes';
+import { LoginServiceProvider} from '../../providers/login-service/login-service';
 // import { LoginPage } from '../login/login';
 import { CalanderPage } from '../calander/calander';
 import { ClassSixPage } from '../class-six/class-six';
@@ -23,8 +24,20 @@ import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
+  userLoginInfo = { email: '', password: ''};
+
+  constructor(public navCtrl: NavController, public loginProvider: LoginServiceProvider) {
+
   }
+
+  userLogin() {
+        this.loginProvider.userLogin(this.userLoginInfo).then((result) => {
+            console.log(result);
+        }, (err) => {
+            console.log(err);
+        });
+  }
+
   goToClasses(params){
     if (!params) params = {};
     this.navCtrl.push(ClassesPage);

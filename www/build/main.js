@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 124:
+/***/ 126:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 124;
+webpackEmptyAsyncContext.id = 126;
 
 /***/ }),
 
-/***/ 165:
+/***/ 168:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,7 +30,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 165;
+webpackEmptyAsyncContext.id = 168;
 
 /***/ }),
 
@@ -40,22 +40,23 @@ webpackEmptyAsyncContext.id = 165;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_classes__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__calander_calander__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__class_six_class_six__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__complete_complete__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calander_class_six_calander_class_six__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__class_five_class_five__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__calander_class_five_calander_class_five__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__class_four_class_four__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__calander_class_four_calander_class_four__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__class_three_class_three__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__calander_class_three_calander_class_three__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__class_two_class_two__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__calander_class_two_calander_class_two__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__class_one_class_one__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__calander_class_one_calander_class_one__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calander_calander__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__class_six_class_six__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__complete_complete__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__calander_class_six_calander_class_six__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__class_five_class_five__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__calander_class_five_calander_class_five__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__class_four_class_four__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__calander_class_four_calander_class_four__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__class_three_class_three__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__calander_class_three_calander_class_three__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__class_two_class_two__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__calander_class_two_calander_class_two__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__class_one_class_one__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__calander_class_one_calander_class_one__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,6 +66,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -84,8 +86,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl) {
+    //
+    // constructor(public navCtrl: NavController) {
+    // }
+    function LoginPage(navCtrl, loginService) {
         this.navCtrl = navCtrl;
+        this.loginService = loginService;
     }
     LoginPage_1 = LoginPage;
     LoginPage.prototype.goToClasses = function (params) {
@@ -101,78 +107,78 @@ var LoginPage = /** @class */ (function () {
     LoginPage.prototype.goToCalander = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__calander_calander__["a" /* CalanderPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__calander_calander__["a" /* CalanderPage */]);
     };
     LoginPage.prototype.goToClassSix = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__class_six_class_six__["a" /* ClassSixPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__class_six_class_six__["a" /* ClassSixPage */]);
     };
     LoginPage.prototype.goToComplete = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__complete_complete__["a" /* CompletePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__complete_complete__["a" /* CompletePage */]);
     };
     LoginPage.prototype.goToCalanderClassSix = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]);
     };
     LoginPage.prototype.goToClassFive = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__class_five_class_five__["a" /* ClassFivePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__class_five_class_five__["a" /* ClassFivePage */]);
     };
     LoginPage.prototype.goToCalanderClassFive = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */]);
     };
     LoginPage.prototype.goToClassFour = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__class_four_class_four__["a" /* ClassFourPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__class_four_class_four__["a" /* ClassFourPage */]);
     };
     LoginPage.prototype.goToCalanderClassFour = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */]);
     };
     LoginPage.prototype.goToClassThree = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__class_three_class_three__["a" /* ClassThreePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__class_three_class_three__["a" /* ClassThreePage */]);
     };
     LoginPage.prototype.goToCalanderClassThree = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */]);
     };
     LoginPage.prototype.goToClassTwo = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__class_two_class_two__["a" /* ClassTwoPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__class_two_class_two__["a" /* ClassTwoPage */]);
     };
     LoginPage.prototype.goToCalanderClassTwo = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */]);
     };
     LoginPage.prototype.goToClassOne = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__class_one_class_one__["a" /* ClassOnePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__class_one_class_one__["a" /* ClassOnePage */]);
     };
     LoginPage.prototype.goToCalanderClassOne = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */]);
     };
     LoginPage = LoginPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2">\n  <form id="login-form1">\n    <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n    <ion-list id="login-list1">\n      <ion-item id="login-input1">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="login-input2">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="password" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="login-toggle1">\n        <ion-label>\n          Remember Me\n        </ion-label>\n        <ion-toggle color="positive" checked="false"></ion-toggle>\n      </ion-item>\n    </ion-list>\n    <button id="login-button1" ion-button color="stable" block on-click="goToClasses()">\n      Log in\n    </button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/login/login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <form id="login-form1" (ngSubmit)="userLogin()">\n\n    <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n\n    <ion-list id="login-list1">\n\n      <ion-item id="login-input1">\n\n        <ion-label>\n\n          Email\n\n        </ion-label>\n\n        <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" name="name" placeholder=""></ion-input>\n\n      </ion-item>\n\n      <ion-item id="login-input2">\n\n        <ion-label>\n\n          Password\n\n        </ion-label>\n\n        <ion-input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>\n\n      </ion-item>\n\n      <ion-item id="login-toggle1">\n\n        <ion-label>\n\n          Remember Me\n\n        </ion-label>\n\n        <ion-toggle color="positive" checked="false"></ion-toggle>\n\n      </ion-item>\n\n    </ion-list>\n\n    <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->\n\n    <button id="login-button1" ion-button color="stable" block>\n\n      Log in\n\n    </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */]])
     ], LoginPage);
     return LoginPage;
     var LoginPage_1;
@@ -188,7 +194,7 @@ var LoginPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -206,7 +212,7 @@ var CalanderPage = /** @class */ (function () {
     }
     CalanderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander/calander.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page11">\n  <ion-list id="calander-list4">\n    <ion-item id="calander-list-item-container1"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander/calander.html"*/
+            selector: 'page-calander',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander\calander.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page11">\n\n  <ion-list id="calander-list4">\n\n    <ion-item id="calander-list-item-container1"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander\calander.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderPage);
@@ -217,27 +223,13 @@ var CalanderPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 209:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
 /***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassSixPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -255,7 +247,7 @@ var CalanderClassSixPage = /** @class */ (function () {
     }
     CalanderClassSixPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-six',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-six/calander-class-six.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class Six\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page17">\n  <ion-list id="calanderClassSix-list10">\n    <ion-item id="calanderClassSix-list-item-container7"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-six/calander-class-six.html"*/
+            selector: 'page-calander-class-six',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-six\calander-class-six.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class Six\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page17">\n\n  <ion-list id="calanderClassSix-list10">\n\n    <ion-item id="calanderClassSix-list-item-container7"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-six\calander-class-six.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassSixPage);
@@ -266,13 +258,68 @@ var CalanderClassSixPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the LoginServiceProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var LoginServiceProvider = /** @class */ (function () {
+    function LoginServiceProvider(http) {
+        this.http = http;
+        this.url = "https://hack-fresno18.herokuapp.com/users/login";
+        console.log('Hello LoginServiceProvider Provider');
+    }
+    LoginServiceProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], LoginServiceProvider);
+    return LoginServiceProvider;
+}());
+
+//# sourceMappingURL=login-service.js.map
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
 /***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassFivePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -290,7 +337,7 @@ var CalanderClassFivePage = /** @class */ (function () {
     }
     CalanderClassFivePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-five',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-five/calander-class-five.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class Five\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page9">\n  <ion-list id="calanderClassFive-list9">\n    <ion-item id="calanderClassFive-list-item-container6"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-five/calander-class-five.html"*/
+            selector: 'page-calander-class-five',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-five\calander-class-five.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class Five\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page9">\n\n  <ion-list id="calanderClassFive-list9">\n\n    <ion-item id="calanderClassFive-list-item-container6"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-five\calander-class-five.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassFivePage);
@@ -307,7 +354,7 @@ var CalanderClassFivePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassFourPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -325,7 +372,7 @@ var CalanderClassFourPage = /** @class */ (function () {
     }
     CalanderClassFourPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-four',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-four/calander-class-four.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class Four\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page8">\n  <ion-list id="calanderClassFour-list8">\n    <ion-item id="calanderClassFour-list-item-container5"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-four/calander-class-four.html"*/
+            selector: 'page-calander-class-four',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-four\calander-class-four.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class Four\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page8">\n\n  <ion-list id="calanderClassFour-list8">\n\n    <ion-item id="calanderClassFour-list-item-container5"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-four\calander-class-four.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassFourPage);
@@ -336,15 +383,15 @@ var CalanderClassFourPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 232:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_class_one_class_one__ = __webpack_require__(36);
@@ -361,14 +408,18 @@ var CalanderClassFourPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_calander_class_four_calander_class_four__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_five_calander_class_five__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_six_calander_class_six__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_login_service_login_service__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_http__ = __webpack_require__(291);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -419,7 +470,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: []
-                })
+                }),
+                __WEBPACK_IMPORTED_MODULE_23__angular_http__["a" /* HttpModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -444,7 +496,8 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_22__providers_login_service_login_service__["a" /* LoginServiceProvider */]
             ]
         })
     ], AppModule);
@@ -461,7 +514,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassThreePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -479,7 +532,7 @@ var CalanderClassThreePage = /** @class */ (function () {
     }
     CalanderClassThreePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-three',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-three/calander-class-three.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class Three\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page7">\n  <ion-list id="calanderClassThree-list7">\n    <ion-item id="calanderClassThree-list-item-container4"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-three/calander-class-three.html"*/
+            selector: 'page-calander-class-three',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-three\calander-class-three.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class Three\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page7">\n\n  <ion-list id="calanderClassThree-list7">\n\n    <ion-item id="calanderClassThree-list-item-container4"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-three\calander-class-three.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassThreePage);
@@ -496,7 +549,7 @@ var CalanderClassThreePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -514,7 +567,7 @@ var CalanderClassTwoPage = /** @class */ (function () {
     }
     CalanderClassTwoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-two',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-two/calander-class-two.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class Two\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page6">\n  <ion-list id="calanderClassTwo-list6">\n    <ion-item id="calanderClassTwo-list-item-container3"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-two/calander-class-two.html"*/
+            selector: 'page-calander-class-two',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-two\calander-class-two.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class Two\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page6">\n\n  <ion-list id="calanderClassTwo-list6">\n\n    <ion-item id="calanderClassTwo-list-item-container3"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-two\calander-class-two.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassTwoPage);
@@ -531,7 +584,7 @@ var CalanderClassTwoPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalanderClassOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -549,7 +602,7 @@ var CalanderClassOnePage = /** @class */ (function () {
     }
     CalanderClassOnePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calander-class-one',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-one/calander-class-one.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calander Class One\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page5">\n  <ion-list id="calanderClassOne-list5">\n    <ion-item id="calanderClassOne-list-item-container2"></ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/calander-class-one/calander-class-one.html"*/
+            selector: 'page-calander-class-one',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-one\calander-class-one.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Calander Class One\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page5">\n\n  <ion-list id="calanderClassOne-list5">\n\n    <ion-item id="calanderClassOne-list-item-container2"></ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\calander-class-one\calander-class-one.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CalanderClassOnePage);
@@ -560,15 +613,15 @@ var CalanderClassOnePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -595,7 +648,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/app/app.html"*/'<ion-nav #mainContent [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/'<ion-nav #mainContent [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -612,7 +665,7 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__calander_calander__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__class_six_class_six__ = __webpack_require__(30);
@@ -742,7 +795,7 @@ var ClassesPage = /** @class */ (function () {
     };
     ClassesPage = ClassesPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-classes',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/classes/classes.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Classes\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3">\n  <button id="classes-button3" ion-button color="positive" block on-click="goToClassOne()">\n    Class One\n  </button>\n  <button id="classes-button4" ion-button color="positive" block on-click="goToClassTwo()">\n    Class Two\n  </button>\n  <button id="classes-button5" ion-button color="positive" block on-click="goToClassThree()">\n    Class Three\n  </button>\n  <button id="classes-button6" ion-button color="positive" block on-click="goToClassFour()">\n    Class Four\n  </button>\n  <button id="classes-button7" ion-button color="positive" block on-click="goToClassFive()">\n    Class Five\n  </button>\n  <button id="classes-button8" ion-button color="positive" block on-click="goToClassSix()">\n    Class Six\n  </button>\n  <div class="spacer" style="width:283px;height:50px;" id="classes-spacer9"></div>\n  <button id="classes-button24" ion-button clear color="assertive" large on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classes-button29" ion-button clear color="assertive" large on-click="goToLogin()"></button>\n  <button id="classes-button25" ion-button clear color="positive" large>\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classes-button23" ion-button clear color="positive" large style="border-radius:1px 1px 1px 1px;" on-click="goToCalander()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/classes/classes.html"*/
+            selector: 'page-classes',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Classes\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page3">\n\n  <button id="classes-button3" ion-button color="positive" block on-click="goToClassOne()">\n\n    Class One\n\n  </button>\n\n  <button id="classes-button4" ion-button color="positive" block on-click="goToClassTwo()">\n\n    Class Two\n\n  </button>\n\n  <button id="classes-button5" ion-button color="positive" block on-click="goToClassThree()">\n\n    Class Three\n\n  </button>\n\n  <button id="classes-button6" ion-button color="positive" block on-click="goToClassFour()">\n\n    Class Four\n\n  </button>\n\n  <button id="classes-button7" ion-button color="positive" block on-click="goToClassFive()">\n\n    Class Five\n\n  </button>\n\n  <button id="classes-button8" ion-button color="positive" block on-click="goToClassSix()">\n\n    Class Six\n\n  </button>\n\n  <div class="spacer" style="width:283px;height:50px;" id="classes-spacer9"></div>\n\n  <button id="classes-button24" ion-button clear color="assertive" large on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classes-button29" ion-button clear color="assertive" large on-click="goToLogin()"></button>\n\n  <button id="classes-button25" ion-button clear color="positive" large>\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classes-button23" ion-button clear color="positive" large style="border-radius:1px 1px 1px 1px;" on-click="goToCalander()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\classes\classes.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassesPage);
@@ -760,7 +813,7 @@ var ClassesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassSixPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -890,7 +943,7 @@ var ClassSixPage = /** @class */ (function () {
     };
     ClassSixPage = ClassSixPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-six',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-six/class-six.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassSix\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page16">\n  <div id="classSix-markdown13" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classSix-spacer19"></div>\n  <button id="classSix-button58" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classSix-button59" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classSix-spacer20"></div>\n  <button id="classSix-button60" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classSix-button61" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classSix-button62" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classSix-button63" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassSix()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-six/class-six.html"*/
+            selector: 'page-class-six',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-six\class-six.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassSix\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page16">\n\n  <div id="classSix-markdown13" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classSix-spacer19"></div>\n\n  <button id="classSix-button58" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classSix-button59" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classSix-spacer20"></div>\n\n  <button id="classSix-button60" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classSix-button61" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classSix-button62" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classSix-button63" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassSix()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-six\class-six.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassSixPage);
@@ -908,7 +961,7 @@ var ClassSixPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calander_calander__ = __webpack_require__(20);
@@ -1038,7 +1091,7 @@ var CompletePage = /** @class */ (function () {
     };
     CompletePage = CompletePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-complete',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/complete/complete.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Complete\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page10">\n  <div class="spacer" style="height:100px;" id="complete-spacer8"></div>\n  <button id="complete-button21" ion-button color="positive" block on-click="goToClasses()">\n    Finished\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/complete/complete.html"*/
+            selector: 'page-complete',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\complete\complete.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Complete\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page10">\n\n  <div class="spacer" style="height:100px;" id="complete-spacer8"></div>\n\n  <button id="complete-button21" ion-button color="positive" block on-click="goToClasses()">\n\n    Finished\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\complete\complete.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], CompletePage);
@@ -1056,7 +1109,7 @@ var CompletePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassFivePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -1186,7 +1239,7 @@ var ClassFivePage = /** @class */ (function () {
     };
     ClassFivePage = ClassFivePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-five',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-five/class-five.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassFive\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page15">\n  <div id="classFive-markdown12" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classFive-spacer17"></div>\n  <button id="classFive-button52" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classFive-button53" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classFive-spacer18"></div>\n  <button id="classFive-button54" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classFive-button55" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classFive-button56" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classFive-button57" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassFive()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-five/class-five.html"*/
+            selector: 'page-class-five',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-five\class-five.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassFive\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page15">\n\n  <div id="classFive-markdown12" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classFive-spacer17"></div>\n\n  <button id="classFive-button52" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classFive-button53" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classFive-spacer18"></div>\n\n  <button id="classFive-button54" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classFive-button55" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classFive-button56" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classFive-button57" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassFive()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-five\class-five.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassFivePage);
@@ -1204,7 +1257,7 @@ var ClassFivePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassFourPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -1334,7 +1387,7 @@ var ClassFourPage = /** @class */ (function () {
     };
     ClassFourPage = ClassFourPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-four',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-four/class-four.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassFour\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page14">\n  <div id="classFour-markdown11" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classFour-spacer15"></div>\n  <button id="classFour-button46" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classFour-button47" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classFour-spacer16"></div>\n  <button id="classFour-button48" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classFour-button49" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classFour-button50" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classFour-button51" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassFour()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-four/class-four.html"*/
+            selector: 'page-class-four',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-four\class-four.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassFour\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page14">\n\n  <div id="classFour-markdown11" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classFour-spacer15"></div>\n\n  <button id="classFour-button46" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classFour-button47" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classFour-spacer16"></div>\n\n  <button id="classFour-button48" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classFour-button49" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classFour-button50" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classFour-button51" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassFour()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-four\class-four.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassFourPage);
@@ -1352,7 +1405,7 @@ var ClassFourPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassThreePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -1482,7 +1535,7 @@ var ClassThreePage = /** @class */ (function () {
     };
     ClassThreePage = ClassThreePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-three',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-three/class-three.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassThree\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page13">\n  <div id="classThree-markdown10" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classThree-spacer13"></div>\n  <button id="classThree-button40" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classThree-button41" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classThree-spacer14"></div>\n  <button id="classThree-button42" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classThree-button43" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classThree-button44" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classThree-button45" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassThree()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-three/class-three.html"*/
+            selector: 'page-class-three',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-three\class-three.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassThree\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page13">\n\n  <div id="classThree-markdown10" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classThree-spacer13"></div>\n\n  <button id="classThree-button40" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classThree-button41" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classThree-spacer14"></div>\n\n  <button id="classThree-button42" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classThree-button43" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classThree-button44" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classThree-button45" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassThree()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-three\class-three.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassThreePage);
@@ -1500,7 +1553,7 @@ var ClassThreePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -1630,7 +1683,7 @@ var ClassTwoPage = /** @class */ (function () {
     };
     ClassTwoPage = ClassTwoPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-two',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-two/class-two.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassTwo\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page12">\n  <div id="classTwo-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classTwo-spacer11"></div>\n  <button id="classTwo-button34" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classTwo-button35" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classTwo-spacer12"></div>\n  <button id="classTwo-button36" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classTwo-button37" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classTwo-button38" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classTwo-button39" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassTwo()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-two/class-two.html"*/
+            selector: 'page-class-two',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-two\class-two.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassTwo\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page12">\n\n  <div id="classTwo-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classTwo-spacer11"></div>\n\n  <button id="classTwo-button34" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classTwo-button35" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classTwo-spacer12"></div>\n\n  <button id="classTwo-button36" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classTwo-button37" ion-button clear color="light" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classTwo-button38" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classTwo-button39" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassTwo()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-two\class-two.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassTwoPage);
@@ -1648,7 +1701,7 @@ var ClassTwoPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__complete_complete__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(19);
@@ -1778,7 +1831,7 @@ var ClassOnePage = /** @class */ (function () {
     };
     ClassOnePage = ClassOnePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-class-one',template:/*ion-inline-start:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-one/class-one.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      ClassOne\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page4">\n  <div id="classOne-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#000000;">\n      Class not active\n    </p>\n  </div>\n  <div class="spacer" style="width:283px;height:126px;" id="classOne-spacer2"></div>\n  <button id="classOne-button9" ion-button color="positive" block on-click="goToComplete()">\n    Check in.\n  </button>\n  <button id="classOne-button10" ion-button color="positive" block on-click="goToClasses()">\n    Go Back\n  </button>\n  <div class="spacer" style="height:100px;" id="classOne-spacer10"></div>\n  <button id="classOne-button30" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n    <ion-icon name="log-out"></ion-icon>\n  </button>\n  <button id="classOne-button31" ion-button clear color="stable" large style="border-radius:0px 0px 0px 0px;"></button>\n  <button id="classOne-button32" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n    <ion-icon name="home"></ion-icon>\n  </button>\n  <button id="classOne-button33" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassOne()">\n    <ion-icon name="calendar"></ion-icon>\n  </button>\n</ion-content>'/*ion-inline-end:"/Users/calvintey/Documents/hackathon_app/MyAttendance/src/pages/class-one/class-one.html"*/
+            selector: 'page-class-one',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-one\class-one.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      ClassOne\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page4">\n\n  <div id="classOne-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n\n    <p style="color:#000000;">\n\n      Class not active\n\n    </p>\n\n  </div>\n\n  <div class="spacer" style="width:283px;height:126px;" id="classOne-spacer2"></div>\n\n  <button id="classOne-button9" ion-button color="positive" block on-click="goToComplete()">\n\n    Check in.\n\n  </button>\n\n  <button id="classOne-button10" ion-button color="positive" block on-click="goToClasses()">\n\n    Go Back\n\n  </button>\n\n  <div class="spacer" style="height:100px;" id="classOne-spacer10"></div>\n\n  <button id="classOne-button30" ion-button clear color="assertive" large style="border-radius:0px 0px 0px 0px;" on-click="goToLogin()">\n\n    <ion-icon name="log-out"></ion-icon>\n\n  </button>\n\n  <button id="classOne-button31" ion-button clear color="stable" large style="border-radius:0px 0px 0px 0px;"></button>\n\n  <button id="classOne-button32" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToClasses()">\n\n    <ion-icon name="home"></ion-icon>\n\n  </button>\n\n  <button id="classOne-button33" ion-button clear color="positive" large style="border-radius:0px 0px 0px 0px;" on-click="goToCalanderClassOne()">\n\n    <ion-icon name="calendar"></ion-icon>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\class-one\class-one.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ClassOnePage);
@@ -1790,5 +1843,5 @@ var ClassOnePage = /** @class */ (function () {
 
 /***/ })
 
-},[209]);
+},[213]);
 //# sourceMappingURL=main.js.map

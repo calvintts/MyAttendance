@@ -18,10 +18,11 @@ import { CalanderClassThreePage } from '../pages/calander-class-three/calander-c
 import { CalanderClassFourPage } from '../pages/calander-class-four/calander-class-four';
 import { CalanderClassFivePage } from '../pages/calander-class-five/calander-class-five';
 import { CalanderClassSixPage } from '../pages/calander-class-six/calander-class-six';
-
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
+import { HttpClientModule} from "@angular/common/http";
+import { FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+      HttpClientModule,
+      FormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -70,7 +73,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginServiceProvider
   ]
 })
 export class AppModule {}

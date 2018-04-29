@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,7 +13,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 126;
+webpackEmptyAsyncContext.id = 127;
 
 /***/ }),
 
@@ -42,7 +42,7 @@ webpackEmptyAsyncContext.id = 168;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classes_classes__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calander_calander__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__class_six_class_six__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__complete_complete__ = __webpack_require__(31);
@@ -86,14 +86,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginPage = /** @class */ (function () {
-    //
-    // constructor(public navCtrl: NavController) {
-    // }
-    function LoginPage(navCtrl, loginService) {
+    function LoginPage(navCtrl, loginProvider) {
         this.navCtrl = navCtrl;
-        this.loginService = loginService;
+        this.loginProvider = loginProvider;
+        this.userLoginInfo = { email: '', password: '' };
     }
     LoginPage_1 = LoginPage;
+    LoginPage.prototype.userLogin = function () {
+        console.log("user log" + this.userLoginInfo.email);
+        var param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password };
+        this.loginProvider.userLogin(param).then(function (result) {
+            console.log(result);
+        }, function (err) {
+            console.log(err);
+        });
+    };
     LoginPage.prototype.goToClasses = function (params) {
         if (!params)
             params = {};
@@ -176,12 +183,12 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = LoginPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <form id="login-form1" (ngSubmit)="userLogin()">\n\n    <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n\n    <ion-list id="login-list1">\n\n      <ion-item id="login-input1">\n\n        <ion-label>\n\n          Email\n\n        </ion-label>\n\n        <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" name="name" placeholder=""></ion-input>\n\n      </ion-item>\n\n      <ion-item id="login-input2">\n\n        <ion-label>\n\n          Password\n\n        </ion-label>\n\n        <ion-input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>\n\n      </ion-item>\n\n      <ion-item id="login-toggle1">\n\n        <ion-label>\n\n          Remember Me\n\n        </ion-label>\n\n        <ion-toggle color="positive" checked="false"></ion-toggle>\n\n      </ion-item>\n\n    </ion-list>\n\n    <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->\n\n    <button id="login-button1" ion-button color="stable" block>\n\n      Log in\n\n    </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <!--<form id="login-form1" (click)="userLogin()">-->\n\n    <form id="login-form1" (ngSubmit)="userLogin(userLoginInfo)">\n\n        <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>\n\n        <ion-list id="login-list1">\n\n          <ion-item id="login-input1">\n\n            <ion-label>\n\n              Email\n\n            </ion-label>\n\n            <ion-input type="email" [(ngModel)]="userLoginInfo.email" [ngModelOptions]="{standalone: true}" name="email" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-input2">\n\n            <ion-label>\n\n              Password\n\n            </ion-label>\n\n            <ion-input type="password" [(ngModel)]="userLoginInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>\n\n          </ion-item>\n\n          <ion-item id="login-toggle1">\n\n            <ion-label>\n\n              Remember Me\n\n            </ion-label>\n\n            <ion-toggle color="positive" checked="false"></ion-toggle>\n\n          </ion-item>\n\n        </ion-list>\n\n        <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->\n\n        <!--<button id="login-button1" ion-button color="stable" name="sbmt" (click)="userLogin(userLoginInfo)" block>-->\n\n        <button id="login-button1" ion-button color="stable" name="sbmt"block>\n\n        Log in\n\n        </button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_service_login_service__["a" /* LoginServiceProvider */]) === "function" && _b || Object])
     ], LoginPage);
     return LoginPage;
-    var LoginPage_1;
+    var LoginPage_1, _a, _b;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -258,13 +265,15 @@ var CalanderClassSixPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -276,6 +285,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /*
   Generated class for the LoginServiceProvider provider.
 
@@ -285,27 +295,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var LoginServiceProvider = /** @class */ (function () {
     function LoginServiceProvider(http) {
         this.http = http;
-        this.url = "https://hack-fresno18.herokuapp.com/users/login";
+        this.apiUrl = 'https://hack-fresno18.herokuapp.com';
         console.log('Hello LoginServiceProvider Provider');
     }
+    LoginServiceProvider.prototype.userLogin = function (data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.post(_this.apiUrl + '/users/login', data)
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
     LoginServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], LoginServiceProvider);
     return LoginServiceProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=login-service.js.map
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(235);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -383,35 +405,37 @@ var CalanderClassFourPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_classes_classes__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_class_one_class_one__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_class_two_class_two__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_class_three_class_three__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_class_four_class_four__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_class_five_class_five__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_class_six_class_six__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_complete_complete__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_calander_calander__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_calander_class_one_calander_class_one__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_calander_class_two_calander_class_two__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_calander_class_three_calander_class_three__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_calander_class_four_calander_class_four__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_five_calander_class_five__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_six_calander_class_six__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_login_service_login_service__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_http__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_classes_classes__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_class_one_class_one__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_class_two_class_two__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_class_three_class_three__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_class_four_class_four__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_class_five_class_five__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_class_six_class_six__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_complete_complete__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_calander_calander__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_one_calander_class_one__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_two_calander_class_two__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_three_calander_class_three__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_four_calander_class_four__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_five_calander_class_five__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_six_calander_class_six__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_splash_screen__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,62 +466,66 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_classes_classes__["a" /* ClassesPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_class_one_class_one__["a" /* ClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_class_two_class_two__["a" /* ClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_class_three_class_three__["a" /* ClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_class_four_class_four__["a" /* ClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_class_five_class_five__["a" /* ClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_class_six_class_six__["a" /* ClassSixPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_complete_complete__["a" /* CompletePage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_calander_calander__["a" /* CalanderPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_classes_classes__["a" /* ClassesPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_class_one_class_one__["a" /* ClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_class_two_class_two__["a" /* ClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_class_three_class_three__["a" /* ClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_class_four_class_four__["a" /* ClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_class_five_class_five__["a" /* ClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_class_six_class_six__["a" /* ClassSixPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_complete_complete__["a" /* CompletePage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_calander_calander__["a" /* CalanderPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
-                }),
-                __WEBPACK_IMPORTED_MODULE_23__angular_http__["a" /* HttpModule */]
+                })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_classes_classes__["a" /* ClassesPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_class_one_class_one__["a" /* ClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_class_two_class_two__["a" /* ClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_class_three_class_three__["a" /* ClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_class_four_class_four__["a" /* ClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_class_five_class_five__["a" /* ClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_class_six_class_six__["a" /* ClassSixPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_complete_complete__["a" /* CompletePage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_calander_calander__["a" /* CalanderPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_classes_classes__["a" /* ClassesPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_class_one_class_one__["a" /* ClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_class_two_class_two__["a" /* ClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_class_three_class_three__["a" /* ClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_class_four_class_four__["a" /* ClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_class_five_class_five__["a" /* ClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_class_six_class_six__["a" /* ClassSixPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_complete_complete__["a" /* CompletePage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_calander_calander__["a" /* CalanderPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_22__providers_login_service_login_service__["a" /* LoginServiceProvider */]
+                __WEBPACK_IMPORTED_MODULE_24__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_25__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__["a" /* LoginServiceProvider */]
             ]
         })
     ], AppModule);
@@ -613,15 +641,15 @@ var CalanderClassOnePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1843,5 +1871,5 @@ var ClassOnePage = /** @class */ (function () {
 
 /***/ })
 
-},[213]);
+},[214]);
 //# sourceMappingURL=main.js.map

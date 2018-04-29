@@ -6,31 +6,33 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2">
-  <form id="login-form1" (ngSubmit)="userLogin()">
-    <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>
-    <ion-list id="login-list1">
-      <ion-item id="login-input1">
-        <ion-label>
-          Email
-        </ion-label>
-        <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" name="name" placeholder=""></ion-input>
-      </ion-item>
-      <ion-item id="login-input2">
-        <ion-label>
-          Password
-        </ion-label>
-        <ion-input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>
-      </ion-item>
-      <ion-item id="login-toggle1">
-        <ion-label>
-          Remember Me
-        </ion-label>
-        <ion-toggle color="positive" checked="false"></ion-toggle>
-      </ion-item>
-    </ion-list>
-    <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->
-    <button id="login-button1" ion-button color="stable" block>
-      Log in
-    </button>
+  <!--<form id="login-form1" (click)="userLogin()">-->
+    <form id="login-form1" (ngSubmit)="userLogin(userLoginInfo)">
+        <div class="spacer" style="width:283px;height:120px;" id="login-spacer1"></div>
+        <ion-list id="login-list1">
+          <ion-item id="login-input1">
+            <ion-label>
+              Email
+            </ion-label>
+            <ion-input type="email" [(ngModel)]="userLoginInfo.email" [ngModelOptions]="{standalone: true}" name="email" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="login-input2">
+            <ion-label>
+              Password
+            </ion-label>
+            <ion-input type="password" [(ngModel)]="userLoginInfo.password" [ngModelOptions]="{standalone: true}" name="password" placeholder=""></ion-input>
+          </ion-item>
+          <ion-item id="login-toggle1">
+            <ion-label>
+              Remember Me
+            </ion-label>
+            <ion-toggle color="positive" checked="false"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <!--<button id="login-button1" ion-button color="stable" block on-click="goToClasses(email, pwd)">-->
+        <!--<button id="login-button1" ion-button color="stable" name="sbmt" (click)="userLogin(userLoginInfo)" block>-->
+        <button id="login-button1" ion-button color="stable" name="sbmt"block>
+        Log in
+        </button>
   </form>
 </ion-content>

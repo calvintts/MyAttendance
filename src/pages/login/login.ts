@@ -24,14 +24,16 @@ import { CalanderClassOnePage } from '../calander-class-one/calander-class-one';
 })
 export class LoginPage {
 
-  userLoginInfo = { email: '', password: ''};
+  userLoginInfo = {email: '', password: ''};
 
   constructor(public navCtrl: NavController, public loginProvider: LoginServiceProvider) {
 
   }
 
   userLogin() {
-        this.loginProvider.userLogin(this.userLoginInfo).then((result) => {
+    console.log("user log" + this.userLoginInfo.email);
+    let param = { "email": this.userLoginInfo.email, "password": this.userLoginInfo.password} ;
+        this.loginProvider.userLogin(param).then((result) => {
             console.log(result);
         }, (err) => {
             console.log(err);

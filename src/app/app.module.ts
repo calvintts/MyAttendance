@@ -1,7 +1,11 @@
+import { FormsModule} from "@angular/forms";
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule} from "@angular/http";
+import { HttpClientModule} from "@angular/common/http";
 import { MyApp } from './app.component';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { LoginPage } from '../pages/login/login';
 import { ClassesPage } from '../pages/classes/classes';
 import { ClassOnePage } from '../pages/class-one/class-one';
@@ -20,9 +24,7 @@ import { CalanderClassFivePage } from '../pages/calander-class-five/calander-cla
 import { CalanderClassSixPage } from '../pages/calander-class-six/calander-class-six';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginServiceProvider } from '../providers/login-service/login-service';
-import { HttpClientModule} from "@angular/common/http";
-import { FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
       HttpClientModule,
+      HttpModule,
       FormsModule,
     IonicModule.forRoot(MyApp)
   ],

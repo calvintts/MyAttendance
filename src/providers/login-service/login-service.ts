@@ -11,14 +11,16 @@ import 'rxjs/add/operator/map';
 export class LoginServiceProvider {
 
     apiUrl = 'https://hack-fresno18.herokuapp.com';
+    // apiUrl = 'localhost:3000';
 
+    result:any;
   constructor(private http: HttpClient) {
     console.log('Hello LoginServiceProvider Provider');
   }
 
-  userLogin(data) {
+    userLogin(data) {
     return new Promise((resolve, reject) => {
-        this.http.post(this.apiUrl+'/users/login', JSON.stringify(data))
+        this.http.post(this.apiUrl+'/users/login', data)
             .subscribe(res => {
                 resolve(res);
             }, (err) => {

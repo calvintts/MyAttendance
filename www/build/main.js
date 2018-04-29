@@ -24,6 +24,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__calander_class_two_calander_class_two__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__class_one_class_one__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__calander_class_one_calander_class_one__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__ = __webpack_require__(295);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -52,16 +53,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { TeacherStudentSignUpPage } from '../teacher-student-sign-up/teacher-student-sign-up';
+
 var TeacherStudentSignUpPage = /** @class */ (function () {
     function TeacherStudentSignUpPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
     TeacherStudentSignUpPage_1 = TeacherStudentSignUpPage;
     TeacherStudentSignUpPage.prototype.goToSignup = function (params) {
-        if (!params)
-            params = {};
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__signup_signup__["a" /* SignupPage */]);
+        // if (!params) params = {};
+        if (params == 1) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_19__teacher_signup_teacher_signup__["a" /* TeacherSignupPage */]);
+        }
+        else if (params == 2) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__signup_signup__["a" /* SignupPage */]);
+        }
     };
     TeacherStudentSignUpPage.prototype.goToLogin = function (params) {
         if (!params)
@@ -150,12 +155,12 @@ var TeacherStudentSignUpPage = /** @class */ (function () {
     };
     TeacherStudentSignUpPage = TeacherStudentSignUpPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-teacher-student-sign-up',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Teacher/Student Sign Up\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page18">\n  <div class="spacer" style="width:283px;height:122px;" id="teacherStudentSignUp-spacer21"></div>\n  <button id="teacherStudentSignUp-button13" ion-button color="positive" block on-click="goToSignup(1)">\n    Teacher\n  </button>\n  <button id="teacherStudentSignUp-button14" ion-button color="positive" block on-click="goToSignup(2)">\n    Student\n  </button>\n  <button id="teacherStudentSignUp-button15" ion-button color="positive" block on-click="goToLogin()">\n    Go Back\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/
+            selector: 'page-teacher-student-sign-up',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Teacher/Student Sign Up\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page18">\n  <div class="spacer" style="width:283px;height:122px;" id="teacherStudentSignUp-spacer21"></div>\n  <button id="teacherSignupBtn" ion-button color="positive" block (click)="goToSignup(1)">\n    Teacher\n  </button>\n  <button id="studentSignupBtn" ion-button color="positive" block (click)="goToSignup(2)">\n    Student\n  </button>\n  <button id="teacherStudentSignUp-button15" ion-button color="positive" block (click)="goToLogin()">\n    Go Back\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-student-sign-up\teacher-student-sign-up.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
     ], TeacherStudentSignUpPage);
     return TeacherStudentSignUpPage;
-    var TeacherStudentSignUpPage_1;
+    var TeacherStudentSignUpPage_1, _a;
 }());
 
 //# sourceMappingURL=teacher-student-sign-up.js.map
@@ -717,29 +722,33 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_classes_classes__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_class_one_class_one__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_class_two_class_two__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_class_three_class_three__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_class_four_class_four__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_class_five_class_five__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_class_six_class_six__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_complete_complete__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_calander_calander__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_one_calander_class_one__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_two_calander_class_two__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_three_calander_class_three__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_four_calander_class_four__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_five_calander_class_five__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_six_calander_class_six__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_teacher_signup_teacher_signup__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_signup_signup__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_classes_classes__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_class_one_class_one__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_class_two_class_two__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_class_three_class_three__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_class_four_class_four__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_class_five_class_five__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_class_six_class_six__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_complete_complete__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_calander_calander__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_one_calander_class_one__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_two_calander_class_two__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_three_calander_class_three__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_four_calander_class_four__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_calander_class_five_calander_class_five__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_calander_class_six_calander_class_six__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_splash_screen__ = __webpack_require__(213);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -776,21 +785,23 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_teacher_student_sign_up_teacher_student_sign_up__["a" /* TeacherStudentSignUpPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_classes_classes__["a" /* ClassesPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_class_one_class_one__["a" /* ClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_class_two_class_two__["a" /* ClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_class_three_class_three__["a" /* ClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_class_four_class_four__["a" /* ClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_class_five_class_five__["a" /* ClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_class_six_class_six__["a" /* ClassSixPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_complete_complete__["a" /* CompletePage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_calander_calander__["a" /* CalanderPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
+                __WEBPACK_IMPORTED_MODULE_10__pages_teacher_signup_teacher_signup__["a" /* TeacherSignupPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_classes_classes__["a" /* ClassesPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_class_one_class_one__["a" /* ClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_class_two_class_two__["a" /* ClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_class_three_class_three__["a" /* ClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_class_four_class_four__["a" /* ClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_class_five_class_five__["a" /* ClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_class_six_class_six__["a" /* ClassSixPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_complete_complete__["a" /* CompletePage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_calander_calander__["a" /* CalanderPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_26__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
@@ -806,25 +817,27 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_teacher_student_sign_up_teacher_student_sign_up__["a" /* TeacherStudentSignUpPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_classes_classes__["a" /* ClassesPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_class_one_class_one__["a" /* ClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_class_two_class_two__["a" /* ClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_class_three_class_three__["a" /* ClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_class_four_class_four__["a" /* ClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_class_five_class_five__["a" /* ClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_class_six_class_six__["a" /* ClassSixPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_complete_complete__["a" /* CompletePage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_calander_calander__["a" /* CalanderPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
+                __WEBPACK_IMPORTED_MODULE_10__pages_teacher_signup_teacher_signup__["a" /* TeacherSignupPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_classes_classes__["a" /* ClassesPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_class_one_class_one__["a" /* ClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_class_two_class_two__["a" /* ClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_class_three_class_three__["a" /* ClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_class_four_class_four__["a" /* ClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_class_five_class_five__["a" /* ClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_class_six_class_six__["a" /* ClassSixPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_complete_complete__["a" /* CompletePage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_calander_calander__["a" /* CalanderPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */],
+                __WEBPACK_IMPORTED_MODULE_26__pages_calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_27__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_28__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_7__providers_login_service_login_service__["a" /* LoginServiceProvider */]
             ]
@@ -1773,7 +1786,7 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage = SignupPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\signup\signup.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Signup\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page19">\n  <form id="signup-form3">\n    <ion-list id="signup-list11">\n      <ion-item id="signup-input4">\n        <ion-label>\n          First Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input8">\n        <ion-label>\n          Last Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input7">\n        <ion-label>\n          ID\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input5">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input6">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n    </ion-list>\n    <button id="signup-button11" ion-button color="positive" block on-click="goToLogin()">\n      Sign up\n    </button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\signup\signup.html"*/
+            selector: 'page-signup',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\signup\signup.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Student Signup\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page19">\n  <form id="signup-form3">\n    <ion-list id="signup-list11">\n      <ion-item id="signup-input4">\n        <ion-label>\n          First Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input8">\n        <ion-label>\n          Last Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input7">\n        <ion-label>\n          ID\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input5">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input6">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n    </ion-list>\n    <button id="signup-button11" ion-button color="positive" block on-click="goToLogin()">\n      Sign up\n    </button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\signup\signup.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], SignupPage);
@@ -1782,6 +1795,167 @@ var SignupPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=signup.js.map
+
+/***/ }),
+
+/***/ 295:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeacherSignupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__classes_classes__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calander_calander__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__class_six_class_six__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__complete_complete__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__calander_class_six_calander_class_six__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__class_five_class_five__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__calander_class_five_calander_class_five__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__class_four_class_four__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__calander_class_four_calander_class_four__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__class_three_class_three__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__calander_class_three_calander_class_three__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__class_two_class_two__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__calander_class_two_calander_class_two__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__class_one_class_one__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__calander_class_one_calander_class_one__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__teacher_student_sign_up_teacher_student_sign_up__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__signup_signup__ = __webpack_require__(294);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TeacherSignupPage = /** @class */ (function () {
+    function TeacherSignupPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    TeacherSignupPage.prototype.goToLogin = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+    };
+    TeacherSignupPage.prototype.goToClasses = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__classes_classes__["a" /* ClassesPage */]);
+    };
+    TeacherSignupPage.prototype.goToCalander = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__calander_calander__["a" /* CalanderPage */]);
+    };
+    TeacherSignupPage.prototype.goToClassSix = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__class_six_class_six__["a" /* ClassSixPage */]);
+    };
+    TeacherSignupPage.prototype.goToComplete = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__complete_complete__["a" /* CompletePage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassSix = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__calander_class_six_calander_class_six__["a" /* CalanderClassSixPage */]);
+    };
+    TeacherSignupPage.prototype.goToClassFive = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__class_five_class_five__["a" /* ClassFivePage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassFive = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__calander_class_five_calander_class_five__["a" /* CalanderClassFivePage */]);
+    };
+    TeacherSignupPage.prototype.goToClassFour = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__class_four_class_four__["a" /* ClassFourPage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassFour = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__calander_class_four_calander_class_four__["a" /* CalanderClassFourPage */]);
+    };
+    TeacherSignupPage.prototype.goToClassThree = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_12__class_three_class_three__["a" /* ClassThreePage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassThree = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__calander_class_three_calander_class_three__["a" /* CalanderClassThreePage */]);
+    };
+    TeacherSignupPage.prototype.goToClassTwo = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_14__class_two_class_two__["a" /* ClassTwoPage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassTwo = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_15__calander_class_two_calander_class_two__["a" /* CalanderClassTwoPage */]);
+    };
+    TeacherSignupPage.prototype.goToClassOne = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_16__class_one_class_one__["a" /* ClassOnePage */]);
+    };
+    TeacherSignupPage.prototype.goToCalanderClassOne = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_17__calander_class_one_calander_class_one__["a" /* CalanderClassOnePage */]);
+    };
+    TeacherSignupPage.prototype.goToTeacherStudentSignUp = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_18__teacher_student_sign_up_teacher_student_sign_up__["a" /* TeacherStudentSignUpPage */]);
+    };
+    TeacherSignupPage.prototype.goToSignup = function (params) {
+        if (!params)
+            params = {};
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_19__signup_signup__["a" /* SignupPage */]);
+    };
+    TeacherSignupPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-teacher-signup',template:/*ion-inline-start:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-signup\teacher-signup.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Teacher Signup\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page20">\n  <form id="teacherSignup-form4">\n    <ion-list id="teacherSignup-list12">\n      <ion-item id="teacherSignup-input9">\n        <ion-label>\n          First Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="teacherSignup-input10">\n        <ion-label>\n          Last Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="teacherSignup-input11">\n        <ion-label>\n          Teacher ID\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="teacherSignup-input12">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="teacherSignup-input13">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n    </ion-list>\n    <button id="teacherSignup-button16" ion-button color="positive" block on-click="goToLogin()">\n      Sign up\n    </button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\yesol\Documents\AbsentAttender\src\pages\teacher-signup\teacher-signup.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    ], TeacherSignupPage);
+    return TeacherSignupPage;
+}());
+
+//# sourceMappingURL=teacher-signup.js.map
 
 /***/ }),
 
